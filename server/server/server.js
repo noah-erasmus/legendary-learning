@@ -30,8 +30,8 @@ app.use(bodyParser.json())
 // });
 
 app.post('/api/login', (request, response) => {
-    console.log(request)
-    var loginDetails = request.body;
+    // console.log(request)
+    var loginDetails = request.query;
     console.log(loginDetails);
     const token = jwt.sign(loginDetails, process.env.ACCESS_TOKEN_SECRET);
     response.cookie("token", token);
@@ -129,6 +129,10 @@ app.get('/api/login', function (request, response) {
     }
     response.json(reply);
 });
+
+app.get('/api/slots', function (request, response) {
+    response.json(data.slots);
+})
 
 app.listen(8000, function () {
     console.log('Listening on port 8000.');

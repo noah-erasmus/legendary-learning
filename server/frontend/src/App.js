@@ -1,12 +1,43 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
 import { SignIn } from './components/SignIn';
+import { Timetable } from './components/Timetable';
+import 'fontsource-roboto';
 
 function App() {
   return (
     <div className="App">
-      <SignIn></SignIn>
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/classes">Classes</Link>
+              </li>
+            </ul>
+          </nav>
+          <Switch>
+
+            <Route path='/classes'>
+              <Timetable />
+            </Route>
+            <Route exact path="/">
+              <SignIn></SignIn>
+            </Route>
+          </Switch>
+        </div>
+
+      </Router>
     </div>
   );
 }
