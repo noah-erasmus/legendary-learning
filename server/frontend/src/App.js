@@ -10,6 +10,7 @@ import {
 import { SignIn } from './components/SignIn';
 import { Timetable } from './components/Timetable';
 import 'fontsource-roboto';
+import { Details } from './components/Details'
 
 function App() {
   return (
@@ -31,9 +32,14 @@ function App() {
             <Route path='/classes'>
               <Timetable />
             </Route>
+            <Route path='/classDetails/:classId'>
+              <Details />
+            </Route>
             <Route exact path="/">
               <SignIn></SignIn>
             </Route>
+
+
           </Switch>
         </div>
 

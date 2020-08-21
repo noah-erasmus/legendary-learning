@@ -117,6 +117,18 @@ app.get('/api/classes/learners/:learnerId', function (request, response) {
     response.json(classList);
 });
 
+// app.get('/api/slots/:slotId', function (request, response) {
+//     var slotId = parseInt(request.params.slotId, 10);
+//     var times = [];
+//     for (var i = 0; i < data.slots.length; i++) {
+//         if (data.slots[i].slot === slotId) {
+//             times = data.slots[i].times;
+//         }
+//     }
+
+//     response.json(times);
+// });
+
 //7. User id when a valid email and password are supplied
 app.get('/api/login', function (request, response) {
     var reply = "Incorrect login details."

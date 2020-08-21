@@ -21,6 +21,7 @@ import {
 } from 'react-router-dom';
 // import { DetailsModal } from './DetailsModal';
 import { Modal } from '@material-ui/core';
+import { Details } from './Details'
 
 function createData(subject, slot, group, classroom) {
     return { subject, slot, group, classroom };
@@ -54,7 +55,7 @@ export const Timetable = () => {
         { id: 5, slot: 4, subject: "Grade 10 History", group: 1, classroom: "Hall" },
         { id: 6, slot: 2, subject: "Grade 10 Mathematics", group: 1, classroom: "B1" }
     ]);
-    const [slotsData, setSlotsData] = useState();
+    const [slotsData, setSlotsData] = useState([]);
     const [studentNo, setStudentNo] = useState();
     const [classState, setClassState] = useState();
 
@@ -72,6 +73,10 @@ export const Timetable = () => {
         //         console.log(`There was an error ${err}`);
         //     });
 
+
+    }, []);
+
+    const getTimes = () => {
         axios('http://localhost:8000/api/slots')
             .then(response => {
                 return response;
@@ -82,18 +87,6 @@ export const Timetable = () => {
             .catch(err => {
                 console.log(`There was an error ${err}`);
             });
-    }, []);
-
-    const DisplayTimes = (lessonSlot) => {
-        const [times, setTimes] = useState([]);
-        var slotsLength = slotsData.length
-        for (var i = 0; i < slotsLength; i++) {
-            console.log('blah')
-            if (lessonSlot === slotsData[i].slot) {
-
-                setTimes(slotsData[i].times)
-            }
-        }
 
         // return (
         //     <Container>
@@ -105,6 +98,8 @@ export const Timetable = () => {
         //     </Container>
         // )
     }
+
+
 
     const rows = [
         createData(classesData[0].subject, classesData[0].slot, classesData[0].group, classesData[0].classroom),
@@ -152,7 +147,8 @@ export const Timetable = () => {
                 <p>{lesson.classroom}</p>
                 <h3>Slot:</h3>
                 <p>{lesson.slot}</p>
-                {DisplayTimes(lesson.slot)}
+                <p>
+                </p>
                 <h3>Group:</h3>
                 <p>{lesson.group}</p>
             </div>
@@ -206,6 +202,12 @@ export const Timetable = () => {
                                 <TableCell align="right">{row.classroom}</TableCell>
                                 <TableCell align="right">
                                     {DetailsModal(row)}
+                                    {/* <Link to={{
+                                        pathname: `/classDetails/${row.subject}`,
+                                        // state: {
+                                        //     classId: row.subject
+                                        // }
+                                    }}>View details</Link> */}
                                 </TableCell>
                             </TableRow>
                         ))}
