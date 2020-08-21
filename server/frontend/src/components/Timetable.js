@@ -215,55 +215,55 @@ export const Timetable = () => {
                 </Table>
             </TableContainer>
         </Container>
-        // <Container>
-        // <form>
-        //     <TextField onChange={e => onNumberChange(e)} id="standard-basic" label="Enter student number"></TextField>
-        // </form>
-        // <Button onClick={() => submitNo()} variant="contained">Go</Button>
-        //     <Grid container spacing={5}>
-        //         <Grid item>
-        //             <Typography variant="h5" gutterBottom>
-        //                 Time
-        //             </Typography>
+        <Container>
+            <form>
+                <TextField onChange={e => onNumberChange(e)} id="standard-basic" label="Enter student number"></TextField>
+            </form>
+            <Button onClick={() => submitNo()} variant="contained">Go</Button>
+            <Grid container spacing={5}>
+                <Grid item>
+                    <Typography variant="h5" gutterBottom>
+                        Time
+                    </Typography>
 
-        //         </Grid>
-        //         <Grid item>
-        //             <div>
-        //                 <Typography variant="h4" gutterBottom>
-        //                     Monday
-        //                 </Typography>
-        //                 <div>
+                </Grid>
+                <Grid item>
+                    <div>
+                        <Typography variant="h4" gutterBottom>
+                            Monday
+                        </Typography>
+                        <div>
 
-        //                 </div>
+                        </div>
 
-        //             </div>
+                    </div>
 
-        //         </Grid>
-        //         <Grid item>
-        //             <Typography variant="h4" gutterBottom>
-        //                 Tuesday
-        //             </Typography>
+                </Grid>
+                <Grid item>
+                    <Typography variant="h4" gutterBottom>
+                        Tuesday
+                    </Typography>
 
-        //         </Grid>
-        //         <Grid item>
-        //             <Typography variant="h4" gutterBottom>
-        //                 Wednesday
-        //             </Typography>
+                </Grid>
+                <Grid item>
+                    <Typography variant="h4" gutterBottom>
+                        Wednesday
+                    </Typography>
 
-        //         </Grid>
-        //         <Grid item>
-        //             <Typography variant="h4" gutterBottom>
-        //                 Thursday
-        //             </Typography>
+                </Grid>
+                <Grid item>
+                    <Typography variant="h4" gutterBottom>
+                        Thursday
+                    </Typography>
 
-        //         </Grid>
-        //         <Grid item>
-        //             <Typography variant="h4" gutterBottom>
-        //                 Friday
-        //             </Typography>
+                </Grid>
+                <Grid item>
+                    <Typography variant="h4" gutterBottom>
+                        Friday
+                    </Typography>
 
-        //         </Grid>
-        //     </Grid>
-        // </Container>
+                </Grid>
+            </Grid>
+        </Container>
     );
 }
