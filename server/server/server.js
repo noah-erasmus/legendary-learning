@@ -30,7 +30,6 @@ app.use(bodyParser.json())
 // });
 
 app.post('/api/login', (request, response) => {
-    // console.log(request)
     var loginDetails = request.query;
     console.log(loginDetails);
     const token = jwt.sign(loginDetails, process.env.ACCESS_TOKEN_SECRET);
